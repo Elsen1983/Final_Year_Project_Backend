@@ -1,0 +1,57 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.fyp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	//Force spring-data to use the newest elastic-search client
+    //this should removed as soon as spring-data-elasticsearch:4.0.0 is released!
+//			implementation('org.springframework.data:spring-data-elasticsearch:4.0.0.BUILD-SNAPSHOT') {
+//				exclude group: 'org.elasticsearch'
+//				exclude group: 'org.elasticsearch.plugin'
+//				exclude group: 'org.elasticsearch.client'
+//			}
+//	implementation('org.elasticsearch:elasticsearch:7.3.0') { force = true }
+//	implementation('org.elasticsearch.client:elasticsearch-rest-high-level-client:7.3.0') { force = true }
+//	implementation('org.elasticsearch.client:elasticsearch-rest-client:7.3.0') { force = true }
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.liquibase:liquibase-core'
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch:2.3.1.RELEASE'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+test {
+	useJUnitPlatform()
+}

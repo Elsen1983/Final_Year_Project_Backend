@@ -29,17 +29,17 @@ public class DatabaseValidation implements Serializable {
     @Column(name="user_company_name")
     private String user_company_name;
 
-    @Column(name="severity")
-    private Integer severity;
-
-    @Column(name="channel")
-    private Integer channel;
-
-    @Column(name="is_companyadmin")
-    private Integer is_companyadmin;
-
-    @Column(name="is_superadmin")
-    private Integer is_superadmin;
+//    @Column(name="severity")
+//    private Integer severity;
+//
+//    @Column(name="channel")
+//    private Integer channel;
+//
+//    @Column(name="is_companyadmin")
+//    private Integer is_companyadmin;
+//
+//    @Column(name="is_superadmin")
+//    private Integer is_superadmin;
 
     @Column(name="description")
     private String description;
@@ -50,23 +50,23 @@ public class DatabaseValidation implements Serializable {
     @Column(name="pipe_name")
     private String pipe_name;
 
-    @Column(name="is_schemaerrors")
-    private Integer is_schemaerrors;
-
-    @Column(name="is_validationerrors")
-    private Integer is_validationerrors;
+//    @Column(name="is_schemaerrors")
+//    private Integer is_schemaerrors;
+//
+//    @Column(name="is_validationerrors")
+//    private Integer is_validationerrors;
 
     @Column(name="size_of_file")
     private Integer size_of_file;
 
-    @Column(name="nb_ocl_errors")
-    private Integer nb_ocl_errors;
-
-    @Column(name="nb_ocl_notices")
-    private Integer nb_ocl_notices;
-
-    @Column(name="nb_ocl_infos")
-    private Integer nb_ocl_infos;
+//    @Column(name="nb_ocl_errors")
+//    private Integer nb_ocl_errors;
+//
+//    @Column(name="nb_ocl_notices")
+//    private Integer nb_ocl_notices;
+//
+//    @Column(name="nb_ocl_infos")
+//    private Integer nb_ocl_infos;
 
     @Transient
     private String token;

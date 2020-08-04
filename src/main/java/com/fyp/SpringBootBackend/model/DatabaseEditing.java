@@ -29,17 +29,17 @@ public class DatabaseEditing implements Serializable {
     @Column(name="user_company_name")
     private String user_company_name;
 
-    @Column(name="severity")
-    private Integer severity;
-
-    @Column(name="channel")
-    private Integer channel;
-
-    @Column(name="is_companyadmin")
-    private Integer is_companyadmin;
-
-    @Column(name="is_superadmin")
-    private Integer is_superadmin;
+//    @Column(name="severity")
+//    private Integer severity;
+//
+//    @Column(name="channel")
+//    private Integer channel;
+//
+//    @Column(name="is_companyadmin")
+//    private Integer is_companyadmin;
+//
+//    @Column(name="is_superadmin")
+//    private Integer is_superadmin;
 
     @Column(name="description")
     private String description;
@@ -50,8 +50,8 @@ public class DatabaseEditing implements Serializable {
     @Column(name="subtarget")
     private String subtarget;
 
-    @Column(name="edit_type")
-    private String edit_type;
+    @Column(name="subtype")
+    private String subtype;
 
     @Column(name="values")
     private String values;

@@ -1,20 +1,13 @@
 package com.fyp.SpringBootBackend.service;
 
-import com.fyp.SpringBootBackend.model.DatabaseAll;
-import com.fyp.SpringBootBackend.model.DatabaseAllBasic;
-import com.fyp.SpringBootBackend.model.DatabaseValidation;
-import com.fyp.SpringBootBackend.model.User;
-import com.fyp.SpringBootBackend.repository.DatabaseAllBasicRepository;
-import com.fyp.SpringBootBackend.repository.DatabaseAllRepository;
-import com.fyp.SpringBootBackend.repository.DatabaseValidationRepository;
-import com.fyp.SpringBootBackend.repository.UserRepository;
+import com.fyp.SpringBootBackend.model.*;
+import com.fyp.SpringBootBackend.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Set;
 
 @Service
 @Transactional
@@ -34,6 +27,9 @@ class UserServiceImplementation implements UserService {
 
     @Autowired
     private DatabaseValidationRepository databaseValidationRepository;
+
+    @Autowired
+    private DatabaseSimulationRepository databaseSimulationRepository;
 
     @Override
     public User saveUser(User user){
@@ -74,6 +70,11 @@ class UserServiceImplementation implements UserService {
     @Override
     public List<DatabaseValidation> findByUserAndType(String user, String type) {
         return databaseValidationRepository.findByUserAndType(user, type);
+    }
+
+    @Override
+    public List<DatabaseSimulation> findByUserAndTypeSimulation(String user, String type) {
+        return databaseSimulationRepository.findByUserAndTypeSimulation(user, type);
     }
 
 

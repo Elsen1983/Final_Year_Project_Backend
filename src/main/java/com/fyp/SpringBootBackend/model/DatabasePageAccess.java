@@ -27,18 +27,18 @@ public class DatabasePageAccess implements Serializable {
 
     @Column(name="user_company_name")
     private String user_company_name;
-
-    @Column(name="severity")
-    private Integer severity;
-
-    @Column(name="channel")
-    private Integer channel;
-
-    @Column(name="is_companyadmin")
-    private Integer is_companyadmin;
-
-    @Column(name="is_superadmin")
-    private Integer is_superadmin;
+//
+//    @Column(name="severity")
+//    private Integer severity;
+//
+//    @Column(name="channel")
+//    private Integer channel;
+//
+//    @Column(name="is_companyadmin")
+//    private Integer is_companyadmin;
+//
+//    @Column(name="is_superadmin")
+//    private Integer is_superadmin;
 
     @Column(name="description")
     private String description;

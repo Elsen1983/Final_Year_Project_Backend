@@ -29,17 +29,17 @@ public class DatabaseSimulation implements Serializable {
     @Column(name="user_company_name")
     private String user_company_name;
 
-    @Column(name="severity")
-    private Integer severity;
-
-    @Column(name="channel")
-    private Integer channel;
-
-    @Column(name="is_companyadmin")
-    private Integer is_companyadmin;
-
-    @Column(name="is_superadmin")
-    private Integer is_superadmin;
+//    @Column(name="severity")
+//    private Integer severity;
+//
+//    @Column(name="channel")
+//    private Integer channel;
+//
+//    @Column(name="is_companyadmin")
+//    private Integer is_companyadmin;
+//
+//    @Column(name="is_superadmin")
+//    private Integer is_superadmin;
 
     @Column(name="description")
     private String description;
@@ -56,23 +56,23 @@ public class DatabaseSimulation implements Serializable {
     @Column(name="bank_sub")
     private String bank_sub;
 
-    @Column(name="nb_of_txs")
-    private String nb_of_txs;
-
-    @Column(name="is_ultmtdbtr")
-    private String is_ultmtdbtr;
-
-    @Column(name="is_ultmtcdtr")
-    private String is_ultmtcdtr;
-
-    @Column(name="is_endtoendid")
-    private String is_endtoendid;
-
-    @Column(name="is_aos2")
-    private String is_aos2;
-
-    @Column(name="is_ref")
-    private String is_ref;
+//    @Column(name="nb_of_txs")
+//    private String nb_of_txs;
+//
+//    @Column(name="is_ultmtdbtr")
+//    private String is_ultmtdbtr;
+//
+//    @Column(name="is_ultmtcdtr")
+//    private String is_ultmtcdtr;
+//
+//    @Column(name="is_endtoendid")
+//    private String is_endtoendid;
+//
+//    @Column(name="is_aos2")
+//    private String is_aos2;
+//
+//    @Column(name="is_ref")
+//    private String is_ref;
 
     @Column(name="is_successful")
     private Integer is_successful;

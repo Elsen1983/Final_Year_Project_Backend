@@ -1,9 +1,6 @@
 package com.fyp.SpringBootBackend.service;
 
-import com.fyp.SpringBootBackend.model.DatabaseAll;
-import com.fyp.SpringBootBackend.model.DatabaseAllBasic;
-import com.fyp.SpringBootBackend.model.DatabaseValidation;
-import com.fyp.SpringBootBackend.model.User;
+import com.fyp.SpringBootBackend.model.*;
 
 import java.util.List;
 
@@ -25,4 +22,6 @@ public interface UserService {
     //List<DatabaseValidation> findByUserAndTypeValidation(String user, List<String> timestamps);
 
     List<DatabaseValidation> findByUserAndType(String user, String type);
+
+    List<DatabaseSimulation> findByUserAndTypeSimulation(String user, String type);
 }

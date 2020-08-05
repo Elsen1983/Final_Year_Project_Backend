@@ -19,8 +19,8 @@ public class DatabaseReport implements Serializable {
     @Column(name="type")
     private String type;
 
-    @Column(name="user")
-    private String user;
+    @Column(name="username")
+    private String username;
 
     @Column(name="company_name")
     private String company_name;

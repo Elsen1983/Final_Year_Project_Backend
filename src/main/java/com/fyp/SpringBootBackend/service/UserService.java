@@ -21,7 +21,7 @@ public interface UserService {
 
     //List<DatabaseValidation> findByUserAndTypeValidation(String user, List<String> timestamps);
 
-    List<DatabaseValidation> findByUserAndType(String user, String type);
+    //List<DatabaseValidation> findByUserAndType(String user, String type);
 
-    List<DatabaseSimulation> findByUserAndTypeSimulation(String user, String type);
+    //List<DatabaseSimulation> findByUserAndTypeSimulation(String user, String type);
 }

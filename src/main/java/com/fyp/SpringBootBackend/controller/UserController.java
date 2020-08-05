@@ -3,7 +3,7 @@ package com.fyp.SpringBootBackend.controller;
 import com.fyp.SpringBootBackend.jwt.JwtTokenProvider;
 import com.fyp.SpringBootBackend.model.Role;
 import com.fyp.SpringBootBackend.model.User;
-import com.fyp.SpringBootBackend.service.UserService;
+import com.fyp.SpringBootBackend.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,6 +24,23 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ValidationService validationService;
+
+    @Autowired
+    private SimulationService simulationService;
+
+    @Autowired
+    private EditService editService;
+
+    @Autowired
+    private PageAccessService pageAccessService;
+
+    @Autowired
+    private LoginService loginService;
+
+    @Autowired
+    private ReportService reportService;
 
     @PostMapping("registration")
     public ResponseEntity<?> register(@RequestBody User user){
@@ -92,7 +109,27 @@ public class UserController {
             user.setToken(jwtTokenProvider.generateToken(authenticationToken));
             if(type.equals("validation")) {
                 System.out.println("Visualization type is : " + type);
-                return new ResponseEntity<>(userService.findByUserAndType(principal.getName(), type), HttpStatus.OK);
+                return new ResponseEntity<>(validationService.findByUsername(principal.getName()), HttpStatus.OK);
+            }
+            else if(type.equals("simulation")){
+                System.out.println("Visualization type is : " + type);
+                return new ResponseEntity<>(simulationService.findByUsername(principal.getName()), HttpStatus.OK);
+            }
+            else if(type.equals("edit")){
+                System.out.println("Visualization type is : " + type);
+                return new ResponseEntity<>(editService.findByUsername(principal.getName()), HttpStatus.OK);
+            }
+            else if(type.equals("page")){
+                System.out.println("Visualization type is : " + type);
+                return new ResponseEntity<>(pageAccessService.findByUsername(principal.getName()), HttpStatus.OK);
+            }
+            else if(type.equals("login")){
+                System.out.println("Visualization type is : " + type);
+                return new ResponseEntity<>(loginService.findByUsername(principal.getName()), HttpStatus.OK);
+            }
+            else if(type.equals("report")){
+                System.out.println("Visualization type is : " + type);
+                return new ResponseEntity<>(reportService.findByUsername(principal.getName()), HttpStatus.OK);
             }
             else{
                 System.out.println("Wrong Request with " + type);

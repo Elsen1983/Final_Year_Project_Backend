@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface DatabaseSimulationRepository extends JpaRepository<DatabaseSimulation, String> {
 
-    List<DatabaseSimulation> findByUserAndTypeSimulation(String user, String type);
+   List<DatabaseSimulation> findByUsername(String username);
 }

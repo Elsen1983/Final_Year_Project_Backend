@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface DatabaseValidationRepository extends JpaRepository<DatabaseValidation, String> {
 
-    //@Query(value="", nativeQuery=true)
-    List<DatabaseValidation> findByUserAndType(String user, String type);
+    List<DatabaseValidation> findByUsername(String username);
 }

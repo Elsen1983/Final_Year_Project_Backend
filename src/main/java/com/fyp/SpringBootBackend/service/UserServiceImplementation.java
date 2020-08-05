@@ -25,11 +25,11 @@ class UserServiceImplementation implements UserService {
     @Autowired
     private DatabaseAllBasicRepository databaseAllBasicRepository;
 
-    @Autowired
-    private DatabaseValidationRepository databaseValidationRepository;
-
-    @Autowired
-    private DatabaseSimulationRepository databaseSimulationRepository;
+//    @Autowired
+//    private DatabaseValidationRepository databaseValidationRepository;
+//
+//    @Autowired
+//    private DatabaseSimulationRepository databaseSimulationRepository;
 
     @Override
     public User saveUser(User user){
@@ -51,11 +51,6 @@ class UserServiceImplementation implements UserService {
     }
 
 
-//    @Override
-//    public List<DatabaseAll> findByCompanyName(String company_name) {
-//        return databaseAllRepository.findByCompanyName(company_name);
-//    }
-
     @Override
     public List<DatabaseAll> findByUser(String user) {
         System.out.println(user);
@@ -67,15 +62,7 @@ class UserServiceImplementation implements UserService {
         return databaseAllBasicRepository.findByUser(user);
     }
 
-    @Override
-    public List<DatabaseValidation> findByUserAndType(String user, String type) {
-        return databaseValidationRepository.findByUserAndType(user, type);
-    }
 
-    @Override
-    public List<DatabaseSimulation> findByUserAndTypeSimulation(String user, String type) {
-        return databaseSimulationRepository.findByUserAndTypeSimulation(user, type);
-    }
 
 
 }

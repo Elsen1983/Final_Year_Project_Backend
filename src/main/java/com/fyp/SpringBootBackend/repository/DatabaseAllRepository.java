@@ -14,4 +14,5 @@ public interface DatabaseAllRepository extends JpaRepository<DatabaseAll, String
 
     List<DatabaseAll> findByUser(String user);
 
+    List<DatabaseAll> findAll();
 }

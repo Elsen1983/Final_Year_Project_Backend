@@ -8,4 +8,6 @@ import java.util.List;
 public interface DatabaseValidationRepository extends JpaRepository<DatabaseValidation, String> {
 
     List<DatabaseValidation> findByUsername(String username);
+
+    List<DatabaseValidation> findByType(String type);
 }

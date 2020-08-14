@@ -18,4 +18,9 @@ public class EditServiceImplementation implements EditService{
     public List<DatabaseEditing> findByUsername(String username) {
         return databaseEditRepository.findByUsername(username);
     }
+
+    @Override
+    public List<DatabaseEditing> findByType(String type) {
+        return databaseEditRepository.findByType(type);
+    }
 }

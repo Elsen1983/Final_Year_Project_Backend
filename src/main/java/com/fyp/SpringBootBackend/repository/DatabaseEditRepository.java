@@ -9,4 +9,6 @@ public interface DatabaseEditRepository extends JpaRepository<DatabaseEditing, S
 
     List<DatabaseEditing> findByUsername(String username);
 
+    List<DatabaseEditing> findByType(String type);
+
 }

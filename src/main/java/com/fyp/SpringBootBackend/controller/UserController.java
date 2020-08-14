@@ -44,7 +44,6 @@ public class UserController {
 
     @PostMapping("registration")
     public ResponseEntity<?> register(@RequestBody User user){
-//        System.out.println("/api/user/registration called");
         if(userService.findByUsername(user.getUsername()) != null){
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
@@ -54,17 +53,13 @@ public class UserController {
 
     @GetMapping(path = "login")
     public ResponseEntity<?> login(Principal principal){
-
         if(principal == null){
-            //This should be ok http status because this will be used for logout path.
-            assert false;
             return ResponseEntity.ok(principal);
         }
-        //System.out.println("/user/login called with: " + principal.toString());
         UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
         User user = userService.findByUsername(authenticationToken.getName());
         user.setToken(jwtTokenProvider.generateToken(authenticationToken));
-        System.out.println("/api/user/login called with user:" + principal.getName());
+        //System.out.println("/api/user/login called with user:" + principal.getName());
         return new ResponseEntity<>(userService.findByUsername(principal.getName()), HttpStatus.OK);
     }
 
@@ -102,38 +97,34 @@ public class UserController {
             @RequestParam(value="username")String username,
             @RequestParam(value="type") String type,
             Principal principal){
-        System.out.println("/user/visualization{" + username+ "}{" + type +"} called by: " + principal.getName());
         if(username.equals(principal.getName())){
+
             UsernamePasswordAuthenticationToken authenticationToken = (UsernamePasswordAuthenticationToken) principal;
             User user = userService.findByUsername(authenticationToken.getName());
             user.setToken(jwtTokenProvider.generateToken(authenticationToken));
-            if(type.equals("validation")) {
-                System.out.println("Visualization type is : " + type);
-                return new ResponseEntity<>(validationService.findByUsername(principal.getName()), HttpStatus.OK);
-            }
-            else if(type.equals("simulation")){
-                System.out.println("Visualization type is : " + type);
-                return new ResponseEntity<>(simulationService.findByUsername(principal.getName()), HttpStatus.OK);
-            }
-            else if(type.equals("edit")){
-                System.out.println("Visualization type is : " + type);
-                return new ResponseEntity<>(editService.findByUsername(principal.getName()), HttpStatus.OK);
-            }
-            else if(type.equals("page")){
-                System.out.println("Visualization type is : " + type);
-                return new ResponseEntity<>(pageAccessService.findByUsername(principal.getName()), HttpStatus.OK);
-            }
-            else if(type.equals("login")){
-                System.out.println("Visualization type is : " + type);
-                return new ResponseEntity<>(loginService.findByUsername(principal.getName()), HttpStatus.OK);
-            }
-            else if(type.equals("report")){
-                System.out.println("Visualization type is : " + type);
-                return new ResponseEntity<>(reportService.findByUsername(principal.getName()), HttpStatus.OK);
-            }
-            else{
-                System.out.println("Wrong Request with " + type);
-                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+            switch (type) {
+                case "validation":
+                    System.out.println("Visualization type is : " + type);
+                    return new ResponseEntity<>(validationService.findByUsername(principal.getName()), HttpStatus.OK);
+                case "simulation":
+                    System.out.println("Visualization type is : " + type);
+                    return new ResponseEntity<>(simulationService.findByUsername(principal.getName()), HttpStatus.OK);
+                case "edit":
+                    System.out.println("Visualization type is : " + type);
+                    return new ResponseEntity<>(editService.findByUsername(principal.getName()), HttpStatus.OK);
+                case "page":
+                    System.out.println("Visualization type is : " + type);
+                    return new ResponseEntity<>(pageAccessService.findByUsername(principal.getName()), HttpStatus.OK);
+                case "login":
+                    System.out.println("Visualization type is : " + type);
+                    return new ResponseEntity<>(loginService.findByUsername(principal.getName()), HttpStatus.OK);
+                case "report":
+                    System.out.println("Visualization type is : " + type);
+                    return new ResponseEntity<>(reportService.findByUsername(principal.getName()), HttpStatus.OK);
+                default:
+                    System.out.println("Wrong Request with " + type);
+                    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
         }
         else{

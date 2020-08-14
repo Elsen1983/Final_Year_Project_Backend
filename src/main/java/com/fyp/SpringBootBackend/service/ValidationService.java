@@ -8,4 +8,6 @@ public interface ValidationService {
 
     List<DatabaseValidation> findByUsername(String username);
 
+    List<DatabaseValidation> findByType(String type);
+
 }

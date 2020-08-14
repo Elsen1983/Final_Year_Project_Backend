@@ -9,4 +9,5 @@ public interface DatabasePageAccessRepository extends JpaRepository<DatabasePage
 
     List<DatabasePageAccess> findByUsername(String username);
 
+    List<DatabasePageAccess> findByType(String type);
 }

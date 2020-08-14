@@ -18,4 +18,9 @@ public class PageAccessServiceImplementation implements PageAccessService{
     public List<DatabasePageAccess> findByUsername(String username) {
         return databasePageAccessRepository.findByUsername(username);
     }
+
+    @Override
+    public List<DatabasePageAccess> findByType(String type) {
+        return databasePageAccessRepository.findByType(type);
+    }
 }

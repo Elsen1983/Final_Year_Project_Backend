@@ -32,7 +32,9 @@ public class JwtTokenProvider {
     long exp = System.currentTimeMillis() + 86400000;
 
     public String generateToken(Authentication authentication){
-        String authorities = authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.joining());
+        String authorities = authentication.getAuthorities()
+                .stream().map(GrantedAuthority::getAuthority)
+                .collect(Collectors.joining());
 
         return Jwts.builder().setSubject(authentication.getName())
                 .claim("roles", authorities)

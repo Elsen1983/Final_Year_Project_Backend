@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface EditService {
     List<DatabaseEditing> findByUsername(String username);
+
+    List<DatabaseEditing> findByType(String type);
 }

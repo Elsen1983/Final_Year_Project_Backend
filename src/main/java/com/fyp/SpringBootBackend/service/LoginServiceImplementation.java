@@ -18,4 +18,9 @@ public class LoginServiceImplementation implements LoginService{
     public List<DatabaseLogin> findByUsername(String username) {
         return databaseLoginRepository.findByUsername(username);
     }
+
+    @Override
+    public List<DatabaseLogin> findByType(String type) {
+        return databaseLoginRepository.findByType(type);
+    }
 }

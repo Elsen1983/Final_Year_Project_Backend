@@ -19,4 +19,9 @@ public class ValidationServiceImplementation implements ValidationService {
     public List<DatabaseValidation> findByUsername(String username) {
         return databaseValidationRepository.findByUsername(username);
     }
+
+    @Override
+    public List<DatabaseValidation> findByType(String type) {
+        return databaseValidationRepository.findByType(type);
+    }
 }

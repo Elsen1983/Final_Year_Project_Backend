@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface DatabaseLoginRepository extends JpaRepository<DatabaseLogin, String> {
     List<DatabaseLogin> findByUsername(String username);
+
+    List<DatabaseLogin> findByType(String type);
 }

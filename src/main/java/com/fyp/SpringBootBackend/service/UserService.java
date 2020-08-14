@@ -12,16 +12,8 @@ public interface UserService {
 
     List<User> findAllUsers();
 
-    
-    //List<DatabaseAll> findByCompanyName(String company_name);
-
     List<DatabaseAll> findByUser(String user);
 
     List<DatabaseAllBasic> findByUserBasic(String user);
 
-    //List<DatabaseValidation> findByUserAndTypeValidation(String user, List<String> timestamps);
-
-    //List<DatabaseValidation> findByUserAndType(String user, String type);
-
-    //List<DatabaseSimulation> findByUserAndTypeSimulation(String user, String type);
 }

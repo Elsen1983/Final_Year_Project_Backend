@@ -19,4 +19,9 @@ public class SimulationServiceImplementation implements SimulationService {
     public List<DatabaseSimulation> findByUsername(String username) {
         return databaseSimulationRepository.findByUsername(username);
     }
+
+    @Override
+    public List<DatabaseSimulation> findByType(String type) {
+        return databaseSimulationRepository.findByType(type);
+    }
 }

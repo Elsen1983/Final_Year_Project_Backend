@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ReportService {
     List<DatabaseReport> findByUsername(String username);
+
+    List<DatabaseReport> findByType(String type);
 }

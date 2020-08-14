@@ -8,4 +8,6 @@ import java.util.List;
 public interface DatabaseReportRepository extends JpaRepository<DatabaseReport, String> {
 
     List<DatabaseReport> findByUsername(String username);
+
+    List<DatabaseReport> findByType(String type);
 }

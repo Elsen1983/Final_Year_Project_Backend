@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface SimulationService {
     List<DatabaseSimulation> findByUsername(String username);
+
+    List<DatabaseSimulation> findByType(String type);
 }

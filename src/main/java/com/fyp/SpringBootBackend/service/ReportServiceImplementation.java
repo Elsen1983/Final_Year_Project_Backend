@@ -18,4 +18,9 @@ public class ReportServiceImplementation implements ReportService{
     public List<DatabaseReport> findByUsername(String username) {
         return databaseReportRepository.findByUsername(username);
     }
+
+    @Override
+    public List<DatabaseReport> findByType(String type) {
+        return databaseReportRepository.findByType(type);
+    }
 }

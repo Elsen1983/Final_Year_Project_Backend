@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface LoginService {
     List<DatabaseLogin> findByUsername(String username);
+
+    List<DatabaseLogin> findByType(String type);
 }
